@@ -1,0 +1,128 @@
+/*body{*/
+/*    margin-left: 200px;*/
+/*    margin-right: 100px;*/
+/*}*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    background: linear-gradient(rgba(183,92,41, 0.4), rgba(183,92,41, 0.63));
+    min-height: 51vw;
+}
+h1{
+    color: black;
+    margin: 300px;
+}
+
+.navbar{
+    background-color: #B75C29;
+
+}
+
+.nav-elements{
+    display: flex;
+    margin-left: 200px;
+    height: 80px;
+    font-size: 20px;
+    color: white;
+    align-items: center;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.logo-text{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-link{
+    margin-left: 30px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+}
+
+.search-input{
+    height: 30px;
+    width: 250px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    background-color: rgba(183,92,41, 0.3);
+}
+
+.search-input:focus{
+    outline: none;
+}
+
+.input-text{
+    height: 32px;
+    width: 70px;
+    color: white;
+    background-color: rgba(183,92,41, 0.7);
+    border: none;
+    border-radius: 0 10px 10px 0;
+
+}
+
+.content{
+    margin-left: 200px;
+    margin-right: 200px;
+    margin-top: 20px;
+}
+
+.cards{
+    display: flex;
+    align-items: stretch;
+}
+
+.card{
+    min-height: 280px;
+    width: 170px;
+    border: solid 2px #B75C29;
+    border-radius: 20px;
+}
+
+.card-img{
+    width: 150px;
+    height: 170px;
+    border-radius: 15px;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.book-name{
+    text-align: center;
+    font-weight: bold;
+}
+
+.book-info{
+    margin-left: 10px;
+}
+
+.more-info{
+    color: white;
+    background-color: rgba(183,92,41, 0.7);
+    border: none;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+
+}
+
+.more{
+    display: flex;
+    align-items: end;
+    margin-bottom: 10px;
+}
+
+
+
+
