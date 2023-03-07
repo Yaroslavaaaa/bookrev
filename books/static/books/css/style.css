@@ -1,0 +1,167 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+    background: linear-gradient(rgba(183,92,41, 0.4), rgba(183,92,41, 0.63));
+    min-height: 51vw;
+}
+
+
+.navbar{
+    background-color: #B75C29;
+    display: flex;
+
+}
+
+.nav-elements{
+    display: flex;
+    margin-left: 17%;
+    height: 80px;
+    font-size: 20px;
+    color: white;
+    align-items: center;
+}
+
+.logo{
+    height: 50px;
+    width: 50px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.logo-text{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav-el{
+        margin-left: 30px;
+}
+
+.nav-link{
+    text-decoration: none;
+    color: white;
+}
+
+.user{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-left: 30%;
+    margin-right: 17%;
+    color: white;
+    font-size: 24px;
+}
+
+
+.genres{
+    display: grid;
+    grid-template-columns: 17% 83%;
+}
+
+.list-genres{
+    width: 200px;
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+}
+
+.search-input{
+    height: 30px;
+    width: 250px;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    background-color: rgba(183,92,41, 0.3);
+}
+
+.search-input:focus{
+    outline: none;
+}
+
+.input-text{
+    height: 32px;
+    width: 70px;
+    color: white;
+    background-color: rgba(183,92,41, 0.7);
+    border: none;
+    border-radius: 0 10px 10px 0;
+
+}
+
+.content{
+    margin-right: 200px;
+    margin-top: 20px;
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    margin-top: 20px;
+}
+
+.card{
+    min-height: 280px;
+    width: 170px;
+    border: solid 2px #B75C29;
+    border-radius: 20px;
+    position:relative;
+    padding-bottom:40px;
+}
+
+.card-img{
+    width: 140px;
+    height: 170px;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-top: 15px;
+}
+
+.book-name{
+    text-align: center;
+    font-weight: bold;
+}
+
+.book-info{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.more-info{
+    color: white;
+    background-color: rgba(183,92,41, 0.7);
+    border: none;
+    width: 150px;
+    height: 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.more-info:hover{
+    cursor: pointer;
+}
+
+.more{
+    margin-bottom: 10px;
+    position:absolute;
+    bottom:0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

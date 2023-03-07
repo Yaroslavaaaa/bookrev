@@ -1,0 +1,40 @@
+{% load static %}
+{% load books_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" href="{% static 'books/css/style.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'books/css/book.css' %}" rel="stylesheet" />
+
+</head>
+<body>
+<div class="navbar">
+    <div class="nav-elements">
+        <div class="nav-el logo">.</div>
+        <div class="nav-el logo-text">Bookrev</div>
+        <div class="nav-el"><a class="nav-link" href="/">Главная</a></div>
+        <div class="nav-el"><a class="nav-link" href="add">Добавить книгу</a></div>
+    </div>
+    <div class="user">
+        <div>
+            User User
+        </div>
+    </div>
+</div>
+<div class="genres">
+    <div class="list-genres">
+        <ul>
+            {% show_genres %}
+        </ul>
+    </div>
+    <div>
+        {% block content %}
+{% endblock %}
+    </div>
+</div>
+
+
+</body>
+</html>
