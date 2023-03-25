@@ -1,0 +1,41 @@
+{% extends 'books/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h1>{{book.title}}</h1>
+    </div>
+    <div class="book-content">
+        <div>
+            <img class="book_image" src="{{book.image.url}}">
+        </div>
+        <div class="book-description">
+            <div>
+                <span class="bold-text">Автор:</span> {{book.author}}
+            </div>
+            <div>
+                <span class="bold-text">Жанр:</span> {{book.genre}}
+            </div>
+            <div>
+                <span class="bold-text">Год выпуска:</span> {{book.pub_date}}
+            </div>
+            <div>
+                {{book.description|linebreaks}}
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="comment">Комментарии</div>
+        <form>
+            <div>
+                <textarea class="input-comment"></textarea>
+            </div>
+            <button type="submit">Отправить</button>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% load static %}
+{% load books_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link type="text/css" href="{% static 'books/css/style.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'books/css/book.css' %}" rel="stylesheet" />
+    <link type="text/css" href="{% static 'books/css/index.css' %}" rel="stylesheet" />
+</head>
+<body>
+<div class="navbar">
+    <div class="nav-elements">
+        <div class="nav-el logo">.</div>
+        <div class="nav-el logo-text">Bookrev</div>
+<!--        <div class="nav-el"><a class="nav-link" href="{% url 'index' %}">Главная</a></div>-->
+<!--        <div class="nav-el"><a class="nav-link" href="add">Добавить книгу</a></div>-->
+
+
+        {% for m in menu %}
+	{% if not forloop.last %}
+			<div class="nav-el"><a class="nav-link" href="{% url m.url_name %}">{{m.title}}</a></div>
+	{% else %}
+			<div class="nav-el"><a class="nav-link" href="{% url m.url_name %}">{{m.title}}</a></div>
+	{% endif %}
+{% endfor %}
+    </div>
+    <div class="user">
+        <div>
+            User User
+        </div>
+    </div>
+</div>
+<div class="genres">
+    <div class="list-genres">
+        {% if genre_selected == 0 %}
+            <div class="genre-name selected" >Все жанры</div>
+        {% else %}
+            <div class="genre-name selected" ><a href="{% url 'index' %}">Все жанры</a></div>
+        {% endif %}
+
+        {% for g in genres %}
+            {% if g.books__count > 0 %}
+            {% if g.pk == genre_selected %}
+                <div class="genre-name selected" >{{g.genre_name}}</div>
+            {% else %}
+                <div class="genre-name selected" ><a href="{{ g.get_absolute_url }}">{{g.genre_name}}</a></div>
+            {% endif %}
+            {% endif %}
+        {% endfor %}
+
+    </div>
+    <div>
+        {% block content %}
+        {% endblock %}
+
+        {% if page_obj.has_other_pages %}
+        <nav class="list-pages">
+            <ul>
+
+                {% if page_obj.has_previous %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.previous_page_number }}">&lt;</a>
+                </li>
+                {% endif %}
+
+                {% for p in paginator.page_range %}
+                {% if page_obj.number == p %}
+                <li class="page-num page-num-selected">{{p}}</li>
+                {% elif p >= page_obj.number|add:-2 and p <= page_obj.number|add:2 %}
+                <li class="page-num">
+                    <a href="?page={{p}}">{{p}}</a>
+                </li>
+                {% endif %}
+                {% endfor %}
+
+                {% if page_obj.has_next %}
+                <li class="page-num">
+                    <a href="?page={{ page_obj.next_page_number }}">&gt;</a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+    </div>
+</div>
+
+
+</body>
+</html>
