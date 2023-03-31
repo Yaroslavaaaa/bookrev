@@ -1,0 +1,55 @@
+{% extends 'books/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h1>{{book.title}}</h1>
+    </div>
+    <div class="book-content">
+        <div>
+            <img class="book_image" src="{{book.image.url}}">
+        </div>
+        <div class="book-description">
+            <div>
+                <span class="bold-text">Автор:</span> {{book.author}}
+            </div>
+            <div>
+                <span class="bold-text">Жанр:</span> {{book.genre}}
+            </div>
+            <div>
+                <span class="bold-text">Год выпуска:</span> {{book.pub_date}}
+            </div>
+            <div>
+                {{book.description|linebreaks}}
+            </div>
+        </div>
+    </div>
+    <div class="com">
+
+        <div class="comment">Комментарии</div>
+        <div class="comments">
+        <form method="post">
+            <div>
+                <textarea class="input-comment" placeholder="Введите текст комментария"></textarea>
+            </div>
+            </div>
+<!--            {% csrf_token %}-->
+<!--            {% for f in form %}-->
+<!--              <p><label class="form-label" for="{{ f.id_for_label }}">{{f.label}}: </label>{{ f }}</p>-->
+<!--              <div class="form-error">{{ f.errors }}</div>-->
+<!--              {% endfor %}-->
+            {% if request.user.is_authenticated %}
+            <div class="button-c">
+                <button class="submit-comment" type="submit">Отправить</button>
+            </div>
+            {% else %}
+            <div>Авторизируйтесь, что бы оставить комментарий</div>
+            {% endif %}
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}
