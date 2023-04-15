@@ -1,0 +1,47 @@
+.form-input{
+    background-color: #B75C29;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.add-form{
+    margin-top: 2vh;
+    font-size: 20px;
+}
+
+.add-input{
+    background-color: rgba(183,92,41, 0.5);
+    height: 4vh;
+    width: 20vw;
+    border: solid 1px #B75C29;
+    border-radius: 1vh;
+}
+
+
+.add-input::placeholder{
+    color: rgba(130, 0, 0, 0.5);
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.add-description{
+    width: 30vw;
+    height: 10vw;
+    border-radius: 1vh;
+    background-color: rgba(183, 92,  41, 0.5);
+    border: solid 2px #B75C29;
+}
+
+.add-description::placeholder{
+    color: rgba(130, 0, 0, 0.5);
+    padding-left: 5px;
+    font-size: 14px;
+}
+
+.add-submit{
+    background-color: rgba(183, 92,  41, 0.7);
+    width: 10vw;
+    height: 4vh;
+    border: solid 2px #B75C29;
+    margin-top: 3vh;
+}

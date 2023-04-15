@@ -1,0 +1,77 @@
+{% extends 'books/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div>
+    <div>
+        <h1>{{book.title}}</h1>
+    </div>
+    <div class="book-content">
+        <div>
+            <img class="book_image" src="{{book.image.url}}">
+        </div>
+        <div class="book-description">
+            <div>
+                <span class="bold-text">Автор:</span> {{book.author}}
+            </div>
+            <div>
+                <span class="bold-text">Жанр:</span> {{book.genre}}
+            </div>
+            <div>
+                <span class="bold-text">Год выпуска:</span> {{book.pub_date}}
+            </div>
+            <div>
+                {{book.description|linebreaks}}
+            </div>
+        </div>
+    </div>
+    <div class="com">
+
+        <div class="comment">Комментарии</div>
+        <div class="comments">
+
+
+             <form action="{% url 'create_comment' pk=book.pk %}" method="post">
+                        {% csrf_token %}
+                        <div>
+                            {{ form.com_text }}
+                        </div>
+                 {% if request.user.is_authenticated %}
+                        <input type="hidden" name="user" value="{{user.id}}">
+                        <input type="hidden" name="book" value="{{book.id}}">
+                 {% endif %}
+
+                        {% if request.user.is_authenticated %}
+                        <div class="button-c">
+                            <button class="submit-comment" type="submit">Отправить</button>
+                        </div>
+                        {% else %}
+                        <div>Авторизируйтесь, что бы оставить комментарий</div>
+                        {% endif %}
+                    </form>
+
+            </div>
+    </div>
+
+            {% for c in comments %}
+            <div class="one-comment">
+                <div>
+                    <img class="avatar-com" src="{{ c.user.avatar.url }}">
+                </div>
+                <div class="user-and-text">
+                    <div class="user-comment">
+                        <div>{{c.user}}</div>
+                    </div>
+                    <div class="text-comment">
+                        <div>{{c}}</div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+
+</div>
+
+
+{% endblock %}
